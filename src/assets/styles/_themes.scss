@@ -1,0 +1,11 @@
+@import "./colors";
+
+.t-primary {
+  color: $alelo-gray-brand-50;
+  background-color: $alelo-brand-500;
+}
+
+.t-secondary {
+  color: $alelo-gray-brand-300;
+  background-color: $alelo-default-300;
+}

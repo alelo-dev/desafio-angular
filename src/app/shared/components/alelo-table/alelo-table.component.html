@@ -1,0 +1,27 @@
+<table class="c-table">
+  <thead class="c-table__head">
+    <tr class="c-row">
+      <ng-container *ngFor="let column of columns">
+        <th class="c-row__item">{{ column }}</th>
+      </ng-container>
+    </tr>
+  </thead>
+
+  <tbody class="c-table__body">
+    <ng-container *ngFor="let product of data">
+      <tr class="c-row">
+        <td class="c-row__item">{{ product?.product }}</td>
+        <td class="c-row__item">{{ product?.price | currency: "BRL":true }}</td>
+        <td class="c-row__item">{{ product?.category }}</td>
+        <td class="c-row__item">{{ product?.description }}</td>
+        <td class="c-row__item">
+          <alelo-button
+            (actionButton)="onToHire()"
+            type="link"
+            label="Contratar"
+          ></alelo-button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

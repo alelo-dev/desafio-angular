@@ -1,0 +1,20 @@
+<div
+  class="c-card"
+  [ngClass]="{
+    't-primary': theme === 'primary',
+    't-secondary': theme === 'secondary'
+  }"
+>
+  <div class="c-card__content">
+    <span class="c-card__content--title">{{ title }}</span>
+    <span class="c-card__content--description">{{ description }}</span>
+
+    <div class="c-card__content--actions">
+      <alelo-button
+        (actionButton)="onAction()"
+        [label]="labelButton"
+        [icon]="iconButton"
+      ></alelo-button>
+    </div>
+  </div>
+</div>

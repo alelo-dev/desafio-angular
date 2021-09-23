@@ -1,0 +1,14 @@
+<button
+  (click)="onAction()"
+  class="c-button"
+  [ngClass]="{
+    'b-solid': type === 'solid',
+    'b-link': type === 'link',
+    'b-disabled': type === 'disabled'
+  }"
+>
+  <ng-container *ngIf="icon">
+    <alelo-icon [width]="15" [icon]="icon"></alelo-icon>
+  </ng-container>
+  <span class="c-button__label">{{ label }}</span>
+</button>

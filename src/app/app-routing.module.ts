@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PaymentsComponent } from './pages/payments.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: PaymentsComponent
-  }
+    path: 'payments',
+    loadChildren: () => import('./core/pages/payments/payments.module').then(module => module.PaymentsModule)
+  },
 ];
 
 @NgModule({

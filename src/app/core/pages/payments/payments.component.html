@@ -1,0 +1,64 @@
+<section class="c-payments">
+  <div class="c-payments__header">
+    <div class="c-payments__header--card">
+      <alelo-card-info
+        theme="primary"
+        type="dynamic"
+        title="Peça seu cartão Alelo!"
+        icon="assets/icons/cards.svg"
+      ></alelo-card-info>
+    </div>
+  </div>
+
+  <div class="c-payments__content">
+    <div class="c-payments__content--view-products">
+      <alelo-button
+        (actionButton)="onSeeProducts()"
+        type="link"
+        label="Conheça nossos produtos!"
+      ></alelo-button>
+    </div>
+    <div class="c-payments__content--table">
+      <ng-container
+        *ngIf="isLoading; then loading; else content"
+      ></ng-container>
+    </div>
+  </div>
+
+  <div
+    class="c-payments__footer"
+    [style.flex-direction]="(isMobile$ | async) ? 'row' : 'column'"
+  >
+    <div class="c-payments__footer--card">
+      <alelo-card-info
+        theme="secondary"
+        description="
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. ;)"
+      >
+      </alelo-card-info>
+    </div>
+    <div class="c-payments__footer--card">
+      <alelo-card-action
+        theme="primary"
+        title="Precisando de ajuda?"
+        description="Fale com nosso time de atendimento!"
+        labelButton="Me ajuda!"
+        iconButton="assets/icons/phone.svg"
+        type="dynamic"
+        (actionCard)="onCallMe()"
+      >
+      </alelo-card-action>
+    </div>
+  </div>
+</section>
+
+<ng-template #content>
+  <alelo-table [columns]="columns" [data]="products"></alelo-table>
+</ng-template>
+
+<ng-template #loading>
+  <alelo-loading></alelo-loading>
+</ng-template>

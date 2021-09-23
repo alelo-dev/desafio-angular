@@ -1,0 +1,40 @@
+@import "src/assets/styles/_colors.scss";
+
+.c-button {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.b-link {
+  color: $alelo-brand-400;
+  font-weight: 600;
+  background: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.b-solid {
+  color: $alelo-brand-500;
+  background: $alelo-default-300;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.b-disabled {
+  color: $alelo-gray-brand-200;
+  background-color: $alelo-gray-brand-100;
+  fill: $alelo-gray-brand-200;
+  pointer-events: none;
+}
