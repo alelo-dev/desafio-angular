@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaymentsComponent } from './pages/payments.component';
-import { PromotionWidgetComponent } from './pages/components/promotion-widget.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PaymentsModule } from './core/pages/payments/payments.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PaymentsComponent,
-    PromotionWidgetComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    PaymentsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: [
-    PaymentsComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

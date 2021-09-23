@@ -1,0 +1,26 @@
+<div
+  class="c-card-info"
+  [ngClass]="{
+    't-primary': theme === 'primary',
+    't-secondary': theme === 'secondary'
+  }"
+>
+  <ng-container
+    *ngIf="type === 'default'; then default; else dynamic"
+  ></ng-container>
+</div>
+
+<ng-template #dynamic>
+  <div class="c-card-info__content">
+    <span class="c-card-info__content--title"
+      >{{ title }}
+      <alelo-icon [width]="80" [icon]="icon"></alelo-icon>
+    </span>
+  </div>
+</ng-template>
+
+<ng-template #default>
+  <div class="c-card-info__content">
+    <span class="c-card__content--description">{{ description }}</span>
+  </div>
+</ng-template>

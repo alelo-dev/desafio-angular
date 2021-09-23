@@ -1,0 +1,38 @@
+@import "src/assets/styles/_colors.scss";
+
+.c-table {
+  width: 100%;
+  margin: 18px 0;
+  border-collapse: collapse;
+
+  &__head,
+  &__body {
+    color: $alelo-gray-brand-300;
+
+    .c-row__item {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+
+      text-align: left;
+      padding: 16px;
+    }
+  }
+
+  &__head {
+    border-bottom: 1px solid $alelo-gray-brand-100;
+  }
+
+  &__body {
+    .c-row__item:last-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .c-row:nth-child(even) {
+      background-color: $alelo-gray-brand-100;
+    }
+  }
+}
